@@ -6,12 +6,13 @@
 /*   By: mflury <mflury@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 05:39:34 by mflury            #+#    #+#             */
-/*   Updated: 2024/08/08 06:23:46 by mflury           ###   ########.fr       */
+/*   Updated: 2024/08/08 06:39:26 by mflury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 void print_map(char **map) {
 	int i = 0;
@@ -42,6 +43,8 @@ void floodfill(char **map, int posy, int posx) {
 int	main() {
 	int i = 0;
 	char **map = malloc(sizeof(char *) * 10);
+	while (i < 10)
+		map[i++] = malloc(sizeof(char *) * 10);
 	map[0] = "1111111111";
 	map[1] = "1000000001";
 	map[2] = "100100s001";
